@@ -6,21 +6,26 @@
     
 
     
-    <title>Hexo</title>
+    <title>第五堂Git講義 | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-    <meta name="description" content="關於我     紀錄我的學習筆記   我是Linda">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://y75434.github.io/about/index.html">
+    <meta name="keywords" content="Git" />
+    
+    <meta name="description" content="常見 commit 合併技巧   Git Rebase   Git cherry-pick  rebase 衝突  解決衝突後加入索引： git add 特定檔案 繼續執行 rebase：git rebase –continue  還原版本   還原當前版本：git reset HEAD   還原前兩個版本：git reset HEAD^^   還原前兩個版本，所有更新檔案都放棄：git res">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第五堂Git講義">
+<meta property="og:url" content="https://y75434.github.io/2021/03/19/git01/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="關於我     紀錄我的學習筆記   我是Linda">
+<meta property="og:description" content="常見 commit 合併技巧   Git Rebase   Git cherry-pick  rebase 衝突  解決衝突後加入索引： git add 特定檔案 繼續執行 rebase：git rebase –continue  還原版本   還原當前版本：git reset HEAD   還原前兩個版本：git reset HEAD^^   還原前兩個版本，所有更新檔案都放棄：git res">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-03-22T05:41:00.131Z">
-<meta property="article:modified_time" content="2021-03-22T05:41:00.131Z">
+<meta property="og:image" content="https://i.imgur.com/T3Y3H9P.png">
+<meta property="article:published_time" content="2021-03-19T08:22:19.000Z">
+<meta property="article:modified_time" content="2021-03-22T05:42:33.437Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Git">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/T3Y3H9P.png">
     
 
     
@@ -147,14 +152,56 @@
                         <div class="main-body-header">
     <h1 class="header">
     
-    Hexo
+    uncategorized
     </h1>
 </div>
 
                         <div class="main-body-content">
-                            <article id="page-" class="article article-single article-type-page" itemscope itemprop="blogPost">
+                            <article id="post-git01" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        第五堂Git講義
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+  <div class="article-date">
+    <i class="fa fa-calendar"></i>
+    <a href="/2021/03/19/git01/" class="article-date">
+       <time datetime="2021-03-19T08:22:19.000Z" itemprop="datePublished">2021-03-19</time>
+    </a>
+  </div>
+
+
+<div class="article-date">
+  <i class="fa fa-calendar-plus-o"></i>
+  <a href="/2021/03/19/git01/" class="article-date">
+     <time datetime="2021-03-22T05:42:33.437Z" itemprop="dateModified">2021-03-22</time>
+  </a>
+</div>
+
+
+                
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Git/" rel="tag">Git</a>
+    </div>
+
+                
+
+                
+
+            </div>
         
         
         <div class="article-entry" itemprop="articleBody">
@@ -164,18 +211,55 @@
 
             
 
-            <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>關於我</title>
-</head>
-<body>
-  <h1>紀錄我的學習筆記</h1>
-  <p>我是Linda</p>
-</body>
-</html>
+            <hr>
+<h2 id="常見-commit-合併技巧"><a href="#常見-commit-合併技巧" class="headerlink" title="常見 commit 合併技巧"></a>常見 commit 合併技巧</h2><ul>
+<li>  Git Rebase</li>
+<li>  Git cherry-pick</li>
+</ul>
+<h2 id="rebase-衝突"><a href="#rebase-衝突" class="headerlink" title="rebase 衝突"></a>rebase 衝突</h2><ol>
+<li> 解決衝突後加入索引： <strong>git add 特定檔案</strong></li>
+<li>繼續執行 rebase：git rebase –continue</li>
+</ol>
+<h2 id="還原版本"><a href="#還原版本" class="headerlink" title="還原版本"></a>還原版本</h2><ul>
+<li>  還原當前版本：<code>git reset HEAD</code></li>
+<li>  還原前兩個版本：<code>git reset HEAD^^</code></li>
+<li>  還原前兩個版本，所有更新檔案都<strong>放棄</strong>：<code>git reset HEAD^^ --hard</code></li>
+<li>  觀看詳細歷史紀錄：<code>git reflog</code></li>
+<li>  還原工作目錄上已<strong>更改</strong>的單一檔案 ：<code>git checkout &lt;file&gt;</code></li>
+</ul>
+<h2 id="checkout-與-reset-差異"><a href="#checkout-與-reset-差異" class="headerlink" title="checkout 與 reset 差異"></a>checkout 與 reset 差異</h2><ul>
+<li>  checkout 是移動 HEAD</li>
+<li>  reset 是移動 branch</li>
+</ul>
+<h2 id="Git-reset-參數"><a href="#Git-reset-參數" class="headerlink" title="Git reset 參數"></a>Git reset 參數</h2><ol>
+<li> mixed(預設) - 丟回工作目錄</li>
+<li> soft - 丟回索引</li>
+<li> hard - 直接丟掉</li>
+</ol>
+<h2 id="還原工作目錄與暫存區"><a href="#還原工作目錄與暫存區" class="headerlink" title="還原工作目錄與暫存區"></a>還原工作目錄與暫存區</h2><ul>
+<li>  清除未加入追蹤，並在工作目錄的檔案：git clean -f</li>
+<li>  全部加入索引檔案&gt;還原到工作目錄：<code>git reset HEAD</code></li>
+<li>  單一加入索引檔案&gt;還原到工作目錄：<code>git reset HEAD 檔案名稱</code></li>
+</ul>
+<h2 id="Git-起手式-為自己用-Git"><a href="#Git-起手式-為自己用-Git" class="headerlink" title="Git 起手式 - 為自己用 Git"></a>Git 起手式 - 為自己用 Git</h2><ol>
+<li> 設定忽略清單 .gitignore，<a target="_blank" rel="noopener" href="https://github.com/github/gitignore">各個語言的總表</a></li>
+<li> 建立環境在 master 分支</li>
+<li>開啟 dev、feature 分支開始進行作業</li>
+</ol>
+<h2 id="config-位置"><a href="#config-位置" class="headerlink" title="config 位置"></a>config 位置</h2><p>當你輸入指令時，其實是針對一個實體檔案去做修正，那就是 <code>.gitconfig</code>。</p>
+<ul>
+<li>  Windows：<code>c:\documents and settings\user\</code></li>
+<li>  MacOs：<code>~/.gitconfig</code></li>
+</ul>
+<p>[alias]</p>
+<p>co = checkout</p>
+<p>new = clone <a target="_blank" rel="noopener" href="https://github.com/hexschool/web-layout-training-gulp.git">https://github.com/hexschool/web-layout-training-gulp.git</a></p>
+<p>ci = commit</p>
+<p>st = status</p>
+<p>br = branch</p>
+<hr>
+<h1 id="我的git-快捷鍵"><a href="#我的git-快捷鍵" class="headerlink" title="我的git 快捷鍵"></a>我的git 快捷鍵</h1><p>只要輸入 ex. git new 就可下載樣板</p>
+<p><img src="https://i.imgur.com/T3Y3H9P.png"></p>
 
         </div>
         <footer class="article-footer">
@@ -183,7 +267,7 @@
 
 
 
-    <a data-url="https://y75434.github.io/about/index.html" data-id="ckmhbk2oy000080c886cpg4go" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="https://y75434.github.io/2021/03/19/git01/" data-id="ckmk5y08s0000vtl57iz3cl9r" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -253,28 +337,28 @@
             "@type": "Person",
             "name": "John Doe"
         },
-        
-        "image": "https://y75434.github.io",
-        
-        
-        "datePublished": "2021-03-22",
-        "dateCreated": "2021-03-22",
+        "headline": "第五堂Git講義",
+        "image": "https://y75434.github.iohttps://i.imgur.com/T3Y3H9P.png",
+        "keywords": "Git",
+        "genre": "",
+        "datePublished": "2021-03-19",
+        "dateCreated": "2021-03-19",
         "dateModified": "2021-03-22",
-        "url": "https://y75434.github.io/about/index.html",
+        "url": "https://y75434.github.io/2021/03/19/git01/",
         "description": "
+常見 commit 合併技巧
+  Git Rebase
+  Git cherry-pick
 
+rebase 衝突
+ 解決衝突後加入索引： git add 特定檔案
+繼續執行 rebase：git rebase –continue
 
-  
-  
-  關於我
-
-
-  紀錄我的學習筆記
-  我是Linda
-
-
-",
-        "wordCount": 17
+還原版本
+  還原當前版本：git reset HEAD
+  還原前兩個版本：git reset HEAD^^
+  還原前兩個版本，所有更新檔案都放棄：git res",
+        "wordCount": 160
     }
 </script>
 
@@ -351,6 +435,19 @@
             
         </ul>
     </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2021/03/19/page/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">older</strong>
+        <p class="article-nav-title">Boostrap 資料夾管理與客製化</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
     
     <div class="widgets-container">
         
@@ -535,7 +632,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://y75434.github.io/about/index.html';
+    var disqus_url = 'https://y75434.github.io/2021/03/19/git01/';
     
     (function() {
     var dsq = document.createElement('script');
